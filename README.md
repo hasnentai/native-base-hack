@@ -1,10 +1,13 @@
-# Getting Started with Create React App
+# Hacking with Native Base at [INeuron](https://ineuron.ai/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project will be used as template while hacking
 
-## Available Scripts
+## Team
 
-In the project directory, you can run:
+1. Mandeep
+2. Hasnen Tai
+3. Deepak
+4. TBD
 
 ### `yarn start`
 
