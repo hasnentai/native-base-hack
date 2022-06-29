@@ -9,6 +9,8 @@ This project will be used as template while hacking
 3. Deepak
 4. TBD
 
+## Getting started with project on `localhost:30000`
+
 ### `yarn start`
 
 Runs the app in the development mode.\
