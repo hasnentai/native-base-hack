@@ -1,4 +1,4 @@
-# Hacking with Native Base at [INeuron](https://ineuron.ai/)
+# Hacking with Native Base at [iNeuron](https://ineuron.ai/)
 
 This project will be used as template while hacking
 
