@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
   Box,
   Heading,
@@ -8,17 +8,18 @@ import {
   Button,
   Center,
   NativeBaseProvider,
-} from 'native-base';
+} from "native-base";
 
-import { auth } from '../firebase';
-import { useNavigate } from 'react-router-dom';
+import { auth } from "../firebase";
+import { useNavigate } from "react-router-dom";
+import { NativeBaseHackButton } from "../components/Buttons";
 
 const SignUp = () => {
   const navigate = useNavigate();
   const [formState, setFormState] = React.useState({
-    username: '',
-    email: '',
-    password: '',
+    username: "",
+    email: "",
+    password: "",
     error: null,
   });
 
@@ -30,8 +31,8 @@ const SignUp = () => {
       .then((authUser) => {
         // this.setState(() => ({ ...INITIAL_STATE }));
         // this.props.history.push(routes.HOME);
-        console.log('yahooooooooo');
-        navigate('/');
+        console.log("yahooooooooo");
+        navigate("/");
       })
       .catch((error) => {
         setFormState((formState) => ({
@@ -44,21 +45,37 @@ const SignUp = () => {
   React.useEffect(() => {
     auth.CheckSession((user) => {
       if (user) {
-        navigate('/');
+        navigate("/");
       } else {
-        console.log('user not found');
+        console.log("user not found");
       }
     });
   }, []);
   console.log(formState);
   return (
-    <Center w="100%">
-      <Box safeArea p="2" w="90%" maxW="290" py="8">
+    <Center
+      w="100%"
+      style={{ height: "calc(100vh-30px)" }}
+      display="flex"
+      alignItems={"center"}
+    >
+      <Box
+        safeArea
+        p="5"
+        w="90%"
+        maxW="530"
+        mt={"12"}
+        py="8"
+        borderStyle={"solid"}
+        borderWidth="1px"
+        borderRadius={"5"}
+        borderColor={"coolGray.700"}
+      >
         <Heading
           size="lg"
           color="coolGray.800"
           _dark={{
-            color: 'warmGray.50',
+            color: "warmGray.50",
           }}
           fontWeight="semibold"
         >
@@ -68,7 +85,7 @@ const SignUp = () => {
           mt="1"
           color="coolGray.600"
           _dark={{
-            color: 'warmGray.200',
+            color: "warmGray.200",
           }}
           fontWeight="medium"
           size="xs"
@@ -105,9 +122,11 @@ const SignUp = () => {
             <FormControl.Label>Confirm Password</FormControl.Label>
             <Input type="password" />
           </FormControl> */}
-          <Button mt="2" colorScheme="indigo" onPress={onSubmit}>
-            Sign up
-          </Button>
+          <NativeBaseHackButton
+            width={"100%"}
+            onPress={onSubmit}
+            label="Sign In"
+          />
         </VStack>
       </Box>
     </Center>
