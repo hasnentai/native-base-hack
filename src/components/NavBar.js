@@ -1,46 +1,37 @@
 import React from "react";
-import {
-  Box,
-  Image,
-  Text,
-  Link,
-  HStack,
-  Heading,
-  Switch,
-  useColorMode,
-  VStack,
-  Container,
-  Center,
-  Flex,
-} from "native-base";
-export function NavBar({ colorMode }) {
+import { Box, Text, HStack, Container, Flex } from "native-base";
+import { NativeBaseHackButton } from "./Buttons";
+
+export function NavBar({ colorMode, menuList, toggleColorMode }) {
+  console.log(colorMode);
   return (
     <Box
-      bg={colorMode === "light" ? "coolGray.50" : "coolGray.900"}
+      bg={colorMode === "light" ? "primary.600" : "coolGray.900"}
       py={5}
       px={4}
+      borderBottomWidth="1"
+      borderBottomColor={colorMode === "light" ? "gray.300" : "gray.700"}
     >
       <Box>
         <Flex alignItems={"center"}>
           <Container width={"100%"}>
-            <HStack width={"100%"}>
-              <Text fontSize="lg" fontWeight="bold">
+            <HStack width={"100%"} alignItems="center">
+              <Text color={"white"} fontSize="lg" fontWeight="bold">
                 Logo Of App
               </Text>
               <Box ml={"auto"}>
-                <HStack>
-                  <Text px="10px" fontSize={"md"}>
-                    Home
-                  </Text>
-                  <Text px="10px" fontSize={"md"}>
-                    Home
-                  </Text>
-                  <Text px="10px" fontSize={"md"}>
-                    Home
-                  </Text>
-                  <Text px="10px" fontSize={"md"}>
-                    Home
-                  </Text>
+                <HStack alignItems={"center"}>
+                  {menuList.map((d, i) => (
+                    <Text key={i} color={"white"} px="10px" fontSize={"md"}>
+                      {d}
+                    </Text>
+                  ))}
+                  <NativeBaseHackButton
+                    onPress={toggleColorMode}
+                    label="Change Theme"
+                    variant="solid"
+                    colorScheme={colorMode === "light" ? "tertiary" : "primary"}
+                  />
                 </HStack>
               </Box>
             </HStack>

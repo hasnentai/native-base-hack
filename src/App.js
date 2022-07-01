@@ -1,40 +1,55 @@
 import { NavBar } from "./components/NavBar";
-import logo from "./logo.svg";
+import { Box, useColorMode, Container } from "native-base";
 import {
-  Box,
-  Image,
-  Text,
-  Link,
-  HStack,
-  Heading,
-  Switch,
-  useColorMode,
-  VStack,
-  Container,
-  Center,
-  Flex,
-} from "native-base";
+  NativeBaseHackButton,
+  NativeBaseHackButtonGroup,
+} from "./components/Buttons";
+import { navBarTheme } from "./theme/NativeBaseHackTheme";
+import NativeBaseHackInput from "./components/Input";
+import NativeBaseHackSelect from "./components/DropDown";
+import React from "react";
 
 function App() {
-  const { colorMode } = useColorMode();
-
-  return <NavBar colorMode={colorMode} />;
-}
-
-function ToggleDarkMode() {
   const { colorMode, toggleColorMode } = useColorMode();
+  let menu = ["Home", "About Us", "Contact", "Hire Me"];
+  let listItems = [
+    { label: "UI Designer", value: "uid" },
+    { label: "UI Designer", value: "uid" },
+    { label: "UI Designer", value: "uid" },
+    { label: "UI Designer", value: "uid" },
+    { label: "UI Designer", value: "uid" },
+  ];
+  const [value, setValue] = React.useState("");
+
   return (
-    <HStack space={2}>
-      <Text>Dark</Text>
-      <Switch
-        isChecked={colorMode === "light"}
-        onToggle={toggleColorMode}
-        accessibilityLabel={
-          colorMode === "light" ? "switch to dark mode" : "switch to light mode"
-        }
+    <Box
+      bg={colorMode === "light" ? "warmGray.50" : "coolGray.900"}
+      height="100vh"
+    >
+      <NavBar
+        colorMode={colorMode}
+        toggleColorMode={toggleColorMode}
+        menuList={menu}
+        theme={navBarTheme}
       />
-      <Text>Light</Text>
-    </HStack>
+      <Box width={"100%"} alignItems="center">
+        <Container w={"100%"}>
+          <NativeBaseHackButton
+            label={"Hello World"}
+            onPress={() => {
+              console.log("hello");
+            }}
+          ></NativeBaseHackButton>
+          <NativeBaseHackButtonGroup label={["Edit", "Save"]} />
+          <NativeBaseHackInput colorMode={colorMode} />
+          <NativeBaseHackSelect
+            selectedValue={value}
+            onValueChange={setValue}
+            listItems={listItems}
+          />
+        </Container>
+      </Box>
+    </Box>
   );
 }
 
