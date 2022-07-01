@@ -22,8 +22,10 @@ export function NavBar({ colorMode, menuList, toggleColorMode }) {
         <Flex alignItems={"center"}>
           <Container width={"100%"}>
             <HStack width={"100%"} alignItems="center">
+
               {navBarBrand()}
               {navbarMenuList()}
+
             </HStack>
           </Container>
         </Flex>

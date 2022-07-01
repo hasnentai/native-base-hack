@@ -1,4 +1,4 @@
-# Hacking with Native Base at [INeuron](https://ineuron.ai/)
+# Hacking with Native Base at [iNeuron.ai](https://ineuron.ai/)
 
 This project will be used as template while hacking
 
@@ -7,7 +7,7 @@ This project will be used as template while hacking
 1. Mandeep
 2. Hasnen Tai
 3. Deepak
-4. TBD
+4. Nishant
 
 ## Getting started with project on `localhost:30000`
 
