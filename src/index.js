@@ -1,9 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import { NativeBaseProvider } from "native-base";
-import reportWebVitals from "./reportWebVitals";
-import { nativeBaseHackTheme } from "./theme/NativeBaseHackTheme";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import { NativeBaseProvider } from 'native-base';
+import reportWebVitals from './reportWebVitals';
+import { nativeBaseHackTheme } from './theme/NativeBaseHackTheme';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -11,7 +11,7 @@ ReactDOM.render(
       <App />
     </NativeBaseProvider>
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function
