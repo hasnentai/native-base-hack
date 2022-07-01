@@ -23,7 +23,7 @@ function App() {
 
   return (
     <Box
-      bg={colorMode === "light" ? "warmGray.50" : "coolGray.900"}
+      bg={colorMode === "light" ? "warmGray.50" : "blueGray.800"}
       height="100vh"
     >
       <NavBar

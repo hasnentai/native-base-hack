@@ -28,6 +28,7 @@ const nativeBaseHackTheme = extendTheme({
       800: "#121812",
       900: "#000000",
     },
+    dark: "#191a19",
   },
   config: {
     // Changing initialColorMode to 'dark'
