@@ -10,6 +10,7 @@ const NativeBaseHackButton = ({
   isLoadingText = "Submitting...",
   leftIcon,
   variant = "solid",
+  width,
 }) => {
   return (
     <Box alignItems="center">
@@ -23,6 +24,7 @@ const NativeBaseHackButton = ({
         size={size}
         leftIcon={leftIcon}
         m={1}
+        width={width}
       >
         {label}
       </Button>
